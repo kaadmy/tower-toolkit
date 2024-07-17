@@ -1,2 +1,131 @@
+:root {
+    --foreground-color: #fff;
+    --background-color: #f6f6f6;
+
+    --accent-color: #c84a3d;
+
+    --border-color: #aaa;
+    --border-color-hover: #777;
+
+    --text-color: #000;
+}
+
+
+* {
+    font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
 body {
+    margin: 0;
+    padding: 0;
+
+    background-color: var(--background-color);
+}
+
+/* Button */
+
+button {
+    min-width: 4rem;
+    min-height: 2rem;
+
+    margin: 0;
+
+    color: var(--text-color);
+    background-color: var(--background-color);
+
+    border: 1px solid var(--border-color);
+    border-radius: 0;
+}
+
+button:hover {
+    background-color: var(--foreground-color);
+
+    border: 1px solid var(--border-color-hover);
+}
+
+/* Select */
+
+select {
+    appearance: select;
+
+    min-width: 5rem;
+    min-height: 2rem;
+
+    margin: 0;
+
+    color: var(--text-color);
+    background-color: var(--background-color);
+
+    border: 1px solid var(--border-color);
+    border-radius: 0;
+}
+
+select:hover {
+    background-color: var(--foreground-color);
+
+    border: 1px solid var(--border-color-hover);
+}
+
+/* Input */
+
+input {
+    appearance: input;
+
+    min-width: 2rem;
+    min-height: 2rem;
+
+    box-sizing: border-box;
+
+    margin: 0;
+    padding-left: 0.4rem;
+
+    color: var(--text-color);
+    background-color: var(--background-color);
+
+    border: 1px solid var(--border-color);
+    border-radius: 0;
+}
+
+input:hover {
+    background-color: var(--foreground-color);
+
+    border: 1px solid var(--border-color-hover);
+}
+
+input[type=checkbox] {
+    appearance: none;
+
+    position: relative;
+
+    min-height: 2rem;
+
+    margin: 0;
+    padding: 0;
+
+    background-color: var(--foreground-color);
+
+    border: 1px solid var(--border-color);
+    border-radius: 0;
+}
+
+input[type=checkbox]:hover {
+    background-color: var(--foreground-color);
+
+    border: 1px solid var(--border-color-hover);
+}
+
+input[type=checkbox]:checked:after {
+    content: "";
+
+    position: absolute;
+
+    left: 5px;
+    right: 5px;
+    top: 5px;
+    bottom: 5px;
+
+    margin: 0;
+    padding: 0;
+
+    background-color: var(--text-color);    
 }

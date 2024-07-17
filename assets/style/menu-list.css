@@ -1,0 +1,25 @@
+.menu-list-container {
+    display: flex;
+    flex-flow: column nowrap;
+
+    margin: 0;
+    padding: 0;
+
+    background-color: var(--background-color);
+}
+
+.menu-list-item {
+    display: block;
+
+    flex: 1;
+
+    min-height: 2rem;
+
+    margin: 0;
+    padding: 0.4rem;
+
+    text-align: left;
+
+    background-color: var(--foreground-color);
+    border-bottom: 1px solid var(--border-color);
+}

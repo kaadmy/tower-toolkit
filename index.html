@@ -3,13 +3,20 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="HandheldFriendly" content="true" />
 
     <link rel="stylesheet" href="assets/style/main.css" />
+    <link rel="stylesheet" href="assets/style/footer.css" />
+    <link rel="stylesheet" href="assets/style/tab.css" />
+    <link rel="stylesheet" href="assets/style/menu-card.css" />
+    <link rel="stylesheet" href="assets/style/menu-list.css" />
 
     <title>Tower Toolkit</title>
+    
 
     <link rel="manifest" href="manifest.json" />
+    <link rel="canonical" href="/" />
 
     <!-- iOS PWA icon -->
     <link rel="apple-touch-icon" href="assets/icons/icon-72x72.png" />
@@ -20,14 +27,81 @@
     <link rel="apple-touch-icon" href="assets/icons/icon-192x192.png" />
     <link rel="apple-touch-icon" href="assets/icons/icon-384x384.png" />
     <link rel="apple-touch-icon" href="assets/icons/icon-512x512.png" />
-    <meta name="apple-mobile-web-app-status-bar" content="#d45a3d" />
-    <meta name="theme-color" content="#d45a3d" />
+    <meta name="apple-mobile-web-app-status-bar" content="#fff" />
+    <meta name="theme-color" content="#fff" />
 </head>
 
 <body>
+    <!-- Footer bar -->
+    <footer>
+        <div class="mode-bar">
+            <button onclick="modeSwitch(event, 'tab-content-mode-menu')">Mode</button>
+
+            <div class="mode-bar-container">
+                <!-- Lookout options -->
+                <button class="tab-content-footer tab-content-lookout" onclick="deselectAllLookouts(event)">Deselect All</button>
+                <input name="poi-distance-limit" class="tab-content-footer tab-content-pois" type="checkbox"></input>
+
+                <!-- POI options -->
+                <select name="poi-sort-select" class="tab-content-footer tab-content-pois" label="Sort">
+                    <option id="alpha">A-Z</option>
+                    <option id="facing">Facing</option>
+                    <option id="heading">Heading</option>
+                    <option id="distance">Distance</option>
+                    <option id="type">Type</option>
+                </select>
+
+                <input name="poi-distance-limit" class="tab-content-footer tab-content-pois" type="number" min=1 max=100 step=1 value=25>
+            </div>
+        </div>
+    </footer>
+
     <main>
-        <p>Hello, world!!!!!!!!!!</p>
+        <!-- Mode menu -->
+        <div class="tab-content tab-content-mode-menu" style="display: block">
+            <div class="menu-card-container">
+                <div class="menu-card" onclick="modeSwitch(event, 'tab-content-lookout')">Lookouts</div>
+                <div class="menu-card" onclick="modeSwitch(event, 'tab-content-pois')">POIs</div>
+            </div>
+        </div>
+
+        <!-- Lookout selection mode -->
+        <div class="tab-content tab-content-lookout">
+            <select>
+                <option id="current-location">Current Location</option>
+                <option id="custom-location">Custom Location</option>
+            </select>
+        </div>
+
+        <!-- POI info mode -->
+        <div class="tab-content tab-content-pois">
+            <div class="menu-list-container">
+                <div class="menu-list-item">
+                    <div>
+                        <span>POI Example A</span>
+                    </div>
+                    <div>
+                        <span>125° 40'</span>
+                        <span>13.3 mi</span>
+                        <span>0° 47'</span>
+                    </div>
+                    <div>
+                        <button">Edit</button>
+                    </div>
+                </div>
+                <div class="menu-list-item">
+                    <div>
+                        <span>POI Example B</span>
+                    </div>
+                    <span>125° 40'</span>
+                    <span>13.3 mi</span>
+                    <span>0° 47'</span>
+                </div>
+            </div>
+        </div>
+        </div>
     </main>
+
     <script src="assets/scripts/main.js"></script>
 </body>
 

@@ -1,0 +1,21 @@
+.menu-card-container {
+    display: flex;
+    flex-flow: row wrap;
+    
+    background-color: var(--background-color);
+}
+
+.menu-card {
+    flex: 1;
+
+    min-width: 10rem;
+    max-width: 30rem;
+    min-height: 10rem;
+
+    margin: 0.4rem;
+
+    text-align: center;
+
+    background-color: var(--foreground-color);
+    border: 1px solid var(--border-color);
+}
